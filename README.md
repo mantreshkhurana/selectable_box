@@ -9,11 +9,11 @@ Use SelectableBox to create a selectable box in your flutter app.
 
 ## Installation
 
-Add `selectable_box: ^1.0.0` in your project's pubspec.yaml:
+Add `selectable_box: ^1.0.1` in your project's pubspec.yaml:
 
 ```yaml
 dependencies:
-  selectable_box: ^1.0.0
+  selectable_box: ^1.0.1
 ```
 
 ## Usage
