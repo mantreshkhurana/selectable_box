@@ -43,8 +43,8 @@ SelectableBox(
     onTap: () {},
     isSelected: false,
     child: const Image(
-    image: AssetImage('assets/images/2.jpg'),
-    fit: BoxFit.cover,
+      image: AssetImage('assets/images/2.jpg'),
+      fit: BoxFit.cover,
     ),
 ),
 ```
