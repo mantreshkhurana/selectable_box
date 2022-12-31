@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Code Linting.
+
 ## 1.0.1
 
 - Documentation Update.

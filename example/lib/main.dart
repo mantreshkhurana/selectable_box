@@ -34,55 +34,63 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.black,
       body: ListView(
         children: [
-          const Center(
-            child: Text(
-              'Selectable Box',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+          Column(
+            children: [
+              const SizedBox(height: 20),
+              const Center(
+                child: Text(
+                  'Selectable Box',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          SelectableBox(
-            height: 250,
-            onTap: () {
-              setState(() {
-                isSelected_1 = !isSelected_1;
-              });
-            },
-            isSelected: isSelected_1,
-            child: const Image(
-              image: AssetImage('assets/images/1.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          SelectableBox(
-            height: 250,
-            onTap: () {
-              setState(() {
-                isSelected_2 = !isSelected_2;
-              });
-            },
-            isSelected: isSelected_2,
-            child: const Image(
-              image: AssetImage('assets/images/2.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          SelectableBox(
-            height: 250,
-            onTap: () {
-              setState(() {
-                isSelected_3 = !isSelected_3;
-              });
-            },
-            isSelected: isSelected_3,
-            child: const Image(
-              image: AssetImage('assets/images/3.jpg'),
-              fit: BoxFit.cover,
-            ),
+              const SizedBox(height: 20),
+              SelectableBox(
+                height: 250,
+                width: 400,
+                onTap: () {
+                  setState(() {
+                    isSelected_1 = !isSelected_1;
+                  });
+                },
+                isSelected: isSelected_1,
+                child: const Image(
+                  image: AssetImage('assets/images/1.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SelectableBox(
+                height: 250,
+                width: 400,
+                onTap: () {
+                  setState(() {
+                    isSelected_2 = !isSelected_2;
+                  });
+                },
+                isSelected: isSelected_2,
+                child: const Image(
+                  image: AssetImage('assets/images/2.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SelectableBox(
+                height: 250,
+                width: 400,
+                onTap: () {
+                  setState(() {
+                    isSelected_3 = !isSelected_3;
+                  });
+                },
+                isSelected: isSelected_3,
+                child: const Image(
+                  image: AssetImage('assets/images/3.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
           ),
         ],
       ),
