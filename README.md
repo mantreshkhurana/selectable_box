@@ -5,7 +5,7 @@
 
 Use SelectableBox to create a selectable box in your flutter app.
 
-![Screenshot](https://raw.githubusercontent.com/mantreshkhurana/selectable_box/stable/screenshots/screenshot-1.png)
+![Screenshot](./screenshots/screenshot-1.png)
 
 ## Installation
 
