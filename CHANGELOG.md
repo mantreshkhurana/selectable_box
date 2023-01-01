@@ -1,3 +1,8 @@
+## 1.0.3
+
+- Checkbox Widget.
+- Smooth Border Radius.
+
 ## 1.0.2
 
 - Code Linting.

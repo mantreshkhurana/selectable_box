@@ -1,3 +1,4 @@
+import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 
 /// A widget that can be selected and deselected.
@@ -24,7 +25,7 @@ class SelectableBox extends StatefulWidget {
   final double borderWidth;
 
   /// Border radius of the [SelectableBox] widget.
-  final BorderRadius borderRadius;
+  final double borderRadius;
 
   /// Padding of the box.
   final EdgeInsetsGeometry padding;
@@ -37,6 +38,21 @@ class SelectableBox extends StatefulWidget {
 
   /// Opacity of the [SelectableBox] widget when it is selected.
   final double? isSelectedOpacity;
+
+  /// Alignment of the checkbox in the [SelectableBox] widget.
+  final Alignment checkboxAlignment;
+
+  /// Padding of the checkbox in the [SelectableBox] widget.
+  final EdgeInsetsGeometry checkboxPadding;
+
+  /// Icon to be displayed when the [SelectableBox] widget is selected.
+  final Widget selectedIcon;
+
+  /// Icon to be displayed when the [SelectableBox] widget is not selected.
+  final Widget unselectdIcon;
+
+  /// Whether to show the checkbox or not.
+  final bool showCheckbox;
 
   /// Callback when the [SelectableBox] widget is tapped.
   final VoidCallback onTap;
@@ -56,11 +72,22 @@ class SelectableBox extends StatefulWidget {
     this.borderColor = Colors.grey,
     this.isSelectedBorderColor = Colors.blue,
     this.borderWidth = 1,
-    this.borderRadius = const BorderRadius.all(Radius.circular(20)),
+    this.borderRadius = 20,
     this.padding = const EdgeInsets.all(8),
     this.animationDuration = const Duration(milliseconds: 200),
     this.opacity = 0.5,
     this.isSelectedOpacity = 1,
+    this.checkboxAlignment = Alignment.topRight,
+    this.checkboxPadding = const EdgeInsets.all(0),
+    this.selectedIcon = const Icon(
+      Icons.check_circle,
+      color: Colors.green,
+    ),
+    this.unselectdIcon = const Icon(
+      Icons.check_circle_outline,
+      color: Colors.grey,
+    ),
+    this.showCheckbox = true,
     required this.onTap,
     required this.isSelected,
     required this.child,
@@ -75,31 +102,56 @@ class _SelectableBoxState extends State<SelectableBox> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
-      child: Padding(
-        padding: widget.padding,
-        child: AnimatedOpacity(
-          duration: widget.animationDuration,
-          opacity:
-              widget.isSelected ? widget.isSelectedOpacity! : widget.opacity,
-          child: Container(
-            decoration: BoxDecoration(
-              color: widget.isSelected ? widget.isSelectedColor : widget.color,
-              border: Border.all(
-                color: widget.isSelected
-                    ? widget.isSelectedBorderColor
-                    : widget.borderColor,
-                width: widget.borderWidth,
+      child: Stack(
+        children: [
+          Padding(
+            padding: widget.padding,
+            child: AnimatedOpacity(
+              duration: widget.animationDuration,
+              opacity: widget.isSelected
+                  ? widget.isSelectedOpacity!
+                  : widget.opacity,
+              child: Container(
+                decoration: BoxDecoration(
+                  color:
+                      widget.isSelected ? widget.isSelectedColor : widget.color,
+                  border: Border.all(
+                    color: widget.isSelected
+                        ? widget.isSelectedBorderColor
+                        : widget.borderColor,
+                    width: widget.borderWidth,
+                  ),
+                  borderRadius: SmoothBorderRadius(
+                    cornerRadius: widget.borderRadius,
+                    cornerSmoothing: 0.5,
+                  ),
+                ),
+                height: widget.height,
+                width: widget.width,
+                child: ClipRRect(
+                  borderRadius: SmoothBorderRadius(
+                    cornerRadius: widget.borderRadius,
+                    cornerSmoothing: 0.5,
+                  ),
+                  child: widget.child,
+                ),
               ),
-              borderRadius: widget.borderRadius,
-            ),
-            height: widget.height,
-            width: widget.width,
-            child: ClipRRect(
-              borderRadius: widget.borderRadius,
-              child: widget.child,
             ),
           ),
-        ),
+          widget.showCheckbox
+              ? Positioned.fill(
+                  child: Padding(
+                    padding: widget.checkboxPadding,
+                    child: Align(
+                      alignment: widget.checkboxAlignment,
+                      child: widget.isSelected
+                          ? widget.selectedIcon
+                          : widget.unselectdIcon,
+                    ),
+                  ),
+                )
+              : const SizedBox()
+        ],
       ),
     );
   }

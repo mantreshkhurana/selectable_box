@@ -1,6 +1,6 @@
 name: selectable_box
 description: A flutter package that will allow you to create a selectable box with multiple customizations.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/mantreshkhurana/selectable_box
 repository: https://github.com/mantreshkhurana/selectable_box
 
@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  figma_squircle: ^0.5.3
 
 dev_dependencies:
   flutter_test:

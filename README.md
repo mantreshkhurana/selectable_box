@@ -9,11 +9,11 @@ Use SelectableBox to create a selectable box in your flutter app.
 
 ## Installation
 
-Add `selectable_box: ^1.0.2` in your project's pubspec.yaml:
+Add `selectable_box: ^1.0.3` in your project's pubspec.yaml:
 
 ```yaml
 dependencies:
-  selectable_box: ^1.0.2
+  selectable_box: ^1.0.3
 ```
 
 ## Usage
@@ -27,24 +27,41 @@ import 'package:selectable_box/selectable_box.dart';
 Then use `SelectableBox` in your widget tree:
 
 ```dart
+bool isSelected = false;
+
 SelectableBox(
-    width: 320,
-    height: 200,
-    color: Colors.white,
-    isSelectedColor: Colors.white,
-    borderColor: Colors.grey,
-    isSelectedBorderColor: Colors.blue,
-    borderWidth: 1,
-    borderRadius: const BorderRadius.all(Radius.circular(20)),
-    padding: const EdgeInsets.all(8),
-    animationDuration: const Duration(milliseconds: 200),
-    opacity: 0.6,
-    isSelectedOpacity: 1,
-    onTap: () {},
-    isSelected: false,
-    child: const Image(
-      image: AssetImage('assets/images/2.jpg'),
-      fit: BoxFit.cover,
-    ),
+  height: 250,
+  width: 400,
+  color: Colors.white,
+  isSelectedColor: Colors.white,
+  borderColor: Colors.grey,
+  isSelectedBorderColor: Colors.blue,
+  borderWidth: 1,
+  borderRadius: 20,
+  padding: const EdgeInsets.all(8),
+  animationDuration: const Duration(milliseconds: 200),
+  opacity: 0.5,
+  isSelectedOpacity: 1,
+  checkboxAlignment: Alignment.topRight,
+  checkboxPadding: const EdgeInsets.all(0),
+  selectedIcon: const Icon(
+    Icons.check_circle,
+    color: Colors.green,
+  ),
+  unselectdIcon: const Icon(
+    Icons.check_circle_outline,
+    color: Colors.grey,
+  ),
+  showCheckbox: true,
+  onTap: () {
+    setState(() {
+      isSelected = !isSelected;
+    });
+  },
+  isSelected: isSelected,
+  child: const Image(
+    image: AssetImage('assets/images/1.jpg'),
+    fit: BoxFit.cover,
+  ),
 ),
 ```
