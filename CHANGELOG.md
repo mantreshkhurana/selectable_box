@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Screenshot Update.
+
 ## 1.0.3
 
 - Checkbox Widget.
