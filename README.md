@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/mantreshkhurana/selectable_box.svg?style=social)](https://github.com/mantreshkhurana/selectable_box)
 [![pub package](https://img.shields.io/pub/v/selectable_box.svg)](https://pub.dartlang.org/packages/selectable_box)
 
-Use SelectableBox to create a selectable box in your flutter app.
+Use `SelectableBox` to create a selectable box in your flutter app, `SelectableBox` comes with a lot of customization options mentioned below.
 
 ![Screenshot](https://raw.githubusercontent.com/mantreshkhurana/selectable_box/stable/screenshots/screenshot-1.png)
 
