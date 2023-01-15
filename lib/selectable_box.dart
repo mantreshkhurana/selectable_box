@@ -13,13 +13,13 @@ class SelectableBox extends StatefulWidget {
   final Color color;
 
   /// Background color of the [SelectableBox] widget when it is selected.
-  final Color? isSelectedColor;
+  final Color? selectedColor;
 
   /// Border color of [SelectableBox] widget.
   final Color borderColor;
 
   /// Border color of the [SelectableBox] widget when it is selected.
-  final Color isSelectedBorderColor;
+  final Color selectedBorderColor;
 
   /// Border width of the [SelectableBox] widget.
   final double borderWidth;
@@ -37,7 +37,7 @@ class SelectableBox extends StatefulWidget {
   final double opacity;
 
   /// Opacity of the [SelectableBox] widget when it is selected.
-  final double? isSelectedOpacity;
+  final double? selectedOpacity;
 
   /// Alignment of the checkbox in the [SelectableBox] widget.
   final Alignment checkboxAlignment;
@@ -68,15 +68,15 @@ class SelectableBox extends StatefulWidget {
     this.width = 320,
     this.height = 200,
     this.color = Colors.white,
-    this.isSelectedColor = Colors.white,
+    this.selectedColor = Colors.white,
     this.borderColor = Colors.grey,
-    this.isSelectedBorderColor = Colors.blue,
+    this.selectedBorderColor = Colors.blue,
     this.borderWidth = 1,
     this.borderRadius = 20,
     this.padding = const EdgeInsets.all(8),
     this.animationDuration = const Duration(milliseconds: 200),
     this.opacity = 0.5,
-    this.isSelectedOpacity = 1,
+    this.selectedOpacity = 1,
     this.checkboxAlignment = Alignment.topRight,
     this.checkboxPadding = const EdgeInsets.all(0),
     this.selectedIcon = const Icon(
@@ -108,16 +108,15 @@ class _SelectableBoxState extends State<SelectableBox> {
             padding: widget.padding,
             child: AnimatedOpacity(
               duration: widget.animationDuration,
-              opacity: widget.isSelected
-                  ? widget.isSelectedOpacity!
-                  : widget.opacity,
+              opacity:
+                  widget.isSelected ? widget.selectedOpacity! : widget.opacity,
               child: Container(
                 decoration: BoxDecoration(
                   color:
-                      widget.isSelected ? widget.isSelectedColor : widget.color,
+                      widget.isSelected ? widget.selectedColor : widget.color,
                   border: Border.all(
                     color: widget.isSelected
-                        ? widget.isSelectedBorderColor
+                        ? widget.selectedBorderColor
                         : widget.borderColor,
                     width: widget.borderWidth,
                   ),

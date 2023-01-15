@@ -1,3 +1,7 @@
+## 1.0.5
+
+- API Changes.
+
 ## 1.0.4
 
 - Screenshot Update.

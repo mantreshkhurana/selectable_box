@@ -10,11 +10,11 @@ Convert any widget into a selectable box.
 
 ## Installation
 
-Add `selectable_box: ^1.0.4` in your project's pubspec.yaml:
+Add `selectable_box: ^1.0.5` in your project's pubspec.yaml:
 
 ```yaml
 dependencies:
-  selectable_box: ^1.0.4
+  selectable_box: ^1.0.5
 ```
 
 ## Usage
@@ -34,15 +34,15 @@ SelectableBox(
   height: 250,
   width: 400,
   color: Colors.white,
-  isSelectedColor: Colors.white,
+  selectedColor: Colors.white,
   borderColor: Colors.grey,
-  isSelectedBorderColor: Colors.blue,
+  selectedBorderColor: Colors.blue,
   borderWidth: 1,
   borderRadius: 20,
   padding: const EdgeInsets.all(8),
   animationDuration: const Duration(milliseconds: 200),
   opacity: 0.5,
-  isSelectedOpacity: 1,
+  selectedOpacity: 1,
   checkboxAlignment: Alignment.topRight,
   checkboxPadding: const EdgeInsets.all(0),
   selectedIcon: const Icon(
