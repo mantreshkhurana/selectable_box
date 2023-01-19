@@ -2,7 +2,7 @@ import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 
 /// A widget that can be selected and deselected.
-class SelectableBox extends StatefulWidget {
+class SelectableBox extends StatelessWidget {
   /// Width of [SelectableBox] widget.
   final double width;
 
@@ -94,58 +94,47 @@ class SelectableBox extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<SelectableBox> createState() => _SelectableBoxState();
-}
-
-class _SelectableBoxState extends State<SelectableBox> {
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: Stack(
         children: [
           Padding(
-            padding: widget.padding,
+            padding: padding,
             child: AnimatedOpacity(
-              duration: widget.animationDuration,
-              opacity:
-                  widget.isSelected ? widget.selectedOpacity! : widget.opacity,
+              duration: animationDuration,
+              opacity: isSelected ? selectedOpacity! : opacity,
               child: Container(
                 decoration: BoxDecoration(
-                  color:
-                      widget.isSelected ? widget.selectedColor : widget.color,
+                  color: isSelected ? selectedColor : color,
                   border: Border.all(
-                    color: widget.isSelected
-                        ? widget.selectedBorderColor
-                        : widget.borderColor,
-                    width: widget.borderWidth,
+                    color: isSelected ? selectedBorderColor : borderColor,
+                    width: borderWidth,
                   ),
                   borderRadius: SmoothBorderRadius(
-                    cornerRadius: widget.borderRadius,
+                    cornerRadius: borderRadius,
                     cornerSmoothing: 0.5,
                   ),
                 ),
-                height: widget.height,
-                width: widget.width,
+                height: height,
+                width: width,
                 child: ClipRRect(
                   borderRadius: SmoothBorderRadius(
-                    cornerRadius: widget.borderRadius,
+                    cornerRadius: borderRadius,
                     cornerSmoothing: 0.5,
                   ),
-                  child: widget.child,
+                  child: child,
                 ),
               ),
             ),
           ),
-          widget.showCheckbox
+          showCheckbox
               ? Positioned.fill(
                   child: Padding(
-                    padding: widget.checkboxPadding,
+                    padding: checkboxPadding,
                     child: Align(
-                      alignment: widget.checkboxAlignment,
-                      child: widget.isSelected
-                          ? widget.selectedIcon
-                          : widget.unselectdIcon,
+                      alignment: checkboxAlignment,
+                      child: isSelected ? selectedIcon : unselectdIcon,
                     ),
                   ),
                 )
