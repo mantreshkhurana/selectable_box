@@ -49,7 +49,7 @@ class SelectableBox extends StatelessWidget {
   final Widget selectedIcon;
 
   /// Icon to be displayed when the [SelectableBox] widget is not selected.
-  final Widget unselectdIcon;
+  final Widget unSelectedIcon;
 
   /// Whether to show the checkbox or not.
   final bool showCheckbox;
@@ -83,7 +83,7 @@ class SelectableBox extends StatelessWidget {
       Icons.check_circle,
       color: Colors.green,
     ),
-    this.unselectdIcon = const Icon(
+    this.unSelectedIcon = const Icon(
       Icons.check_circle_outline,
       color: Colors.grey,
     ),
@@ -134,7 +134,7 @@ class SelectableBox extends StatelessWidget {
                     padding: checkboxPadding,
                     child: Align(
                       alignment: checkboxAlignment,
-                      child: isSelected ? selectedIcon : unselectdIcon,
+                      child: isSelected ? selectedIcon : unSelectedIcon,
                     ),
                   ),
                 )

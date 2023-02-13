@@ -10,11 +10,11 @@ Convert any widget into a selectable box.
 
 ## Installation
 
-Add `selectable_box: ^1.0.6` in your project's pubspec.yaml:
+Add `selectable_box: ^1.0.7` in your project's pubspec.yaml:
 
 ```yaml
 dependencies:
-  selectable_box: ^1.0.6
+  selectable_box: ^1.0.7
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ SelectableBox(
     Icons.check_circle,
     color: Colors.green,
   ),
-  unselectdIcon: const Icon(
+  unSelectedIcon: const Icon(
     Icons.check_circle_outline,
     color: Colors.grey,
   ),

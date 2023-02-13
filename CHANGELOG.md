@@ -1,3 +1,7 @@
+## 1.0.7
+
+- API Changes.
+
 ## 1.0.6
 
 - Faster Performance.
