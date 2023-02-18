@@ -1,32 +1,32 @@
 ## 1.0.7
 
-- API Changes.
+- API changes.
 
 ## 1.0.6
 
-- Faster Performance.
+- Faster performance.
 
 ## 1.0.5
 
-- API Changes.
+- API changes.
 
 ## 1.0.4
 
-- Screenshot Update.
+- Screenshot update.
 
 ## 1.0.3
 
-- Checkbox Widget.
-- Smooth Border Radius.
+- Checkbox widget.
+- Smooth border radius.
 
 ## 1.0.2
 
-- Code Linting.
+- Code linting.
 
 ## 1.0.1
 
-- Documentation Update.
+- Documentation update.
 
 ## 1.0.0
 
-- Initial Release.
+- Initial release.
