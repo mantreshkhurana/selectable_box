@@ -10,11 +10,11 @@ Convert any widget into a selectable box.
 
 ## Installation
 
-Add `selectable_box: ^1.0.7` in your project's pubspec.yaml:
+Add `selectable_box: ^1.0.8` in your project's pubspec.yaml:
 
 ```yaml
 dependencies:
-  selectable_box: ^1.0.7
+  selectable_box: ^1.0.8
 ```
 
 ## Usage

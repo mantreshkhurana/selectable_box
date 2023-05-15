@@ -1,3 +1,7 @@
+## 1.0.8
+
+- Bug fixes & improvements.
+
 ## 1.0.7
 
 - API changes.
